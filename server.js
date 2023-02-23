@@ -60,11 +60,11 @@ app.use(expressLayouts)
 // });
 
 const indexRouter = require('./routes/index');
-const friendRouter = require('./routes/friends');
+const userRouter = require('./routes/users');
 
 // use routes
 app.use('/', indexRouter);
-app.use('/friends', friendRouter);
+app.use('/users', userRouter);
 
 //___________________
 //Listener
