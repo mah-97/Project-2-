@@ -59,10 +59,12 @@ app.use(expressLayouts)
 //   res.render('index.ejs');
 // });
 
-const indexRouter = require('./controller/index')
+const indexRouter = require('./routes/index');
+const friendRouter = require('./routes/friends');
 
 // use routes
-app.use('/', indexRouter)
+app.use('/', indexRouter);
+app.use('/friends', friendRouter);
 
 //___________________
 //Listener
