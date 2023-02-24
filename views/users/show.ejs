@@ -1,0 +1,10 @@
+<h2><%= user.name %></h2>
+<ul>
+    <li><strong>Country:</strong> <%= user.country %></li>
+    <li><strong>Age:</strong> <%= user.age %></li>
+    <li><strong>Email:</strong> <%= user.email %></li>
+</ul>
+<a href="/users/<%= user.id%>">Edit</a>
+<%- include('../partials/deleteForm', 
+            {url: `/users/${user.id}`})%>
+
