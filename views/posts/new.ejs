@@ -1,0 +1,19 @@
+<h2>Create New Post</h2>
+<form action="/posts" method="POST" enctype="multipart/form-data">
+    <br>
+    <div>
+        <div>New Post</div>
+    <div>
+        <lable for="location">Location:</lable>
+        <input type="text" name="location" value="<%= post.location %>" placeholder="Enter Location">
+        <lable for="description">Description:</lable>
+        <textarea name="description"><% post.description %></textarea>
+        <lable for="tags">Tags:</lable>
+        <input type="text" name="tags" value="<%= post.tags %>" placeholder="Add Some Tags">
+        <lable for="postphoto">Add a Photo:</lable>
+        <input type="file" name="postphoto">
+    </div>
+    </div>
+    <a href="/posts">Cancel</a>
+    <button type="submit">Submit Post</button>
+</form>  

@@ -1,18 +1,3 @@
-<!-- <h2>Edit User Profile </h2>
-<form action="/users/<%= user._id %>" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name" value="<%= user.name %>">
-  <label>Country:</label>
-  <input type="text" name="country" value="<%= user.country %>">
-  <label>Age:</label>
-  <input type="number" name="age" value="<%= user.age %>">
-  <label>Email:</label>
-  <input type="email" name="email" value="<%= user.email %>">
-  <label>Password:</label>
-  <input type="password" name="password" value="<%= user.password %>">
-  <button type="submit">Update User</button>
-</form> -->
-
 <h2>Edit User</h2>
 <form action="/users/<%= user.id%>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
