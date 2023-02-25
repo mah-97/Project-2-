@@ -1,11 +1,47 @@
-<h2><%= user.name %></h2>
-<ul>
-    <li><strong>Name:</strong> <%= user.name %></li>
-    <li><strong>Country:</strong> <%= user.country %></li>
-    <li><strong>Age:</strong> <%= user.age %></li>
-    <li><strong>Email:</strong> <%= user.email %></li>
-</ul>
-<a href="/users/<%= user.id%>">Edit</a>
-<%- include('../partials/deleteForm', 
-            {url: `/users/${user.id}`})%>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="<%= post.author.avatar %>" alt="<%= post.author.name %>">
+            </div>
+            <div class="post-info">
+                <h2 class="post-location"><%= post.location %></h2>
+                <div class="post-date"><%= post.date %></div>
+            </div>
+        </div>
+        <div class="post-content">
+            <img class="post-photo" src="<%= post.postPhoto %>" alt="<%= post.description %>">
+            <div class="post-description"><%= post.description %></div>
+        </div>
+        <div class="post-footer">
+            <div class="post-tags">
+                <ul>
+                    <% post.tags.forEach(function(tag) { %>
+                        <li><a href="#<%= tag %>">#<%= tag %></a></li>
+                    <% }); %>
+                </ul>
+            </div>
+            <div class="post-actions">
+                <button class="post-like">
+                    <i class="fas fa-heart"></i> <%= post.likes %>
+                </button>
+                <button class="post-comment">
+                    <i class="fas fa-comment"></i> <%= post.comments %>
+                </button>
+                <button class="post-share">
+                    <i class="fas fa-share"></i> Share
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,3 +1,119 @@
 body {
-    background-color: rgb(234, 221, 172);
-}
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  .post {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+  
+  .post-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-location {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .post-date {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .post-content {
+    padding: 10px;
+  }
+  
+  .post-photo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .post-description {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .post-tags {
+    padding: 10px;
+    background-color: #fafafa;
+  }
+  
+  .post-tags ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .post-tags li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .post-tags a {
+    text-decoration: none;
+    color: #666;
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+  
+  .post-actions button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .post-actions button:hover {
+    color: #333;
+  }
+  
+  .post-like i {
+    margin-right: 5px;
+    color: #ff69b4;
+  }
+  
+  .post-comment i {
+    margin-right: 5px;
+    color: #666;
+  }
+  
+  .post-share i {
+    margin-right: 5px;
+    color: #666;
+  }
+  

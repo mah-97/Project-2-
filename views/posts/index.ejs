@@ -1,0 +1,14 @@
+<h2>Search Posts</h2>
+<form action="/posts" method="GET">
+<lable>Posts:</lable>
+<input type="text" name="name" value="<%= searchOptions.post %>">
+<button type="submit">Search</button>
+</form>
+<br>
+<% posts.forEach(post => { %>
+    <div><%= post.id %></div>
+    <a href="/posts/<%= post.id %>">View</a>
+    <a href="/posts/<%= post.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm',
+                 {url: `/users/${post.id}` })%>
+<% }) %>

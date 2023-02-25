@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const Post = require('../models/post');
-const uploadPath = path.join('public', Post.postPhotoBasePath)
+const uploadPath = path.join('public', 'images', 'postPhotos')
 const User = require('../models/user');
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 const upload = multer({
@@ -13,9 +13,25 @@ const upload = multer({
     }
 })
 
-// All Post Route
+// // All Post Route
+// router.get('/', async (req, res) => {
+//     res.render('posts/index.ejs')
+// });
+
 router.get('/', async (req, res) => {
-    res.send('All Posts')
+    let searchOptions = {}
+    if (req.query.name != null && req.query.name != '') {
+        searchOptions.name = new RegExp(req.query.name, 'i')
+    }
+    try {
+        const posts = await Post.find(searchOptions)
+        res.render('posts/index', {
+            posts: posts,
+            searchOptions: req.query
+        })
+    } catch {
+        res.redirect('/')
+    }
 });
 
 // New Post Route
