@@ -3,16 +3,22 @@
     <br>
     <div>
         <div>New Post</div>
-    <div>
+        <div>
         <lable for="location">Location:</lable>
         <input type="text" name="location" value="<%= post.location %>" placeholder="Enter Location">
+        </div>
+        <div>
         <lable for="description">Description:</lable>
         <textarea name="description"><%= post.description %></textarea>
+        </div>
+        <div>
         <lable for="tags">Tags:</lable>
         <input type="text" name="tags" value="<%= post.tags %>" placeholder="Add Some Tags">
+        </div>
+        <div>
         <lable for="postphoto">Add a Photo:</lable>
         <input type="file" name="postphoto">
-    </div>
+        </div>
     </div>
     <a href="/posts">Cancel</a>
     <button type="submit">Submit Post</button>

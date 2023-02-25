@@ -14,10 +14,6 @@ const upload = multer({
 })
 
 // // All Post Route
-// router.get('/', async (req, res) => {
-//     res.render('posts/index.ejs')
-// });
-
 router.get('/', async (req, res) => {
     let searchOptions = {}
     if (req.query.name != null && req.query.name != '') {
